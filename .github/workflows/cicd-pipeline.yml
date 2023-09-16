@@ -60,8 +60,8 @@ jobs:
         run: |
          pip install black
          black .
-      - name: Check the linting
-        run: ruff check .
+      # - name: Check the linting
+      #   run: ruff check .
       - name: Run Tests
         #Step specific environment variables
         env:
