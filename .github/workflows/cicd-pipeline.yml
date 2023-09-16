@@ -101,9 +101,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Set up Kubectl
-      uses: azure/k8s-set-context@v1
-      with:
-        kubeconfig: ${{ secrets.KUBECONFIG }}
+      run: echo "${{ secrets.KUBECONFIG }}" > kubeconfig.yaml
     - name: Deploy
       run: |
         kubectl apply -f kubernetes/deployment.yaml
